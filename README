@@ -1,0 +1,22 @@
+# DevBox YouTube Assistant
+
+DevBox YouTube Assistant is a Streamlit application designed to provide insights and answers based on YouTube video transcripts. Utilizing advanced NLP techniques and the Langchain library, this tool extracts information from video transcripts and responds to user queries in a concise and informative manner.
+
+## Features
+
+- Extracts transcripts from YouTube videos.
+- Splits and processes transcript data for analysis.
+- Performs similarity searches within transcripts to find relevant information.
+- Provides clear, concise, and factual responses to user queries.
+- Handles streaming updates and displays responses in real-time.
+
+## Installation
+
+- Create a new virtual environment in the project directory by running:
+  python -m venv .venv
+- Activate the virtual environment:
+  source .venv/bin/activate
+- Installing Dependencies
+  pip install -r requirements.txt
+- Running the Application
+  streamlit run app.py
