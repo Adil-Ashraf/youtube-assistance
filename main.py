@@ -3,7 +3,7 @@ import langchain_helper as lch
 from utils.url_utils import is_valid_youtube_url
 
 
-st.title("DevBox YouTube Assistant")
+st.title("DevBox Video Assistant")
 
 with st.sidebar:
     with st.form(key='my_form'):
