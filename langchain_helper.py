@@ -44,14 +44,19 @@ def get_response_from_query(db, query, chat_box, k=4):
     prompt = PromptTemplate(
         input_variables=["question", "docs"],
         template="""
-        You are an assistant capable of analyzing YouTube video transcripts. Provide insights on the query below:
+        When analyzing YouTube video transcripts to provide insights, please adhere to the guidelines below:
 
-        Question: {question}
-        Utilize the video transcript provided:
+        - Question: {question}
+        - Transcript: {docs}
 
-        Transcript: {docs}
-        Respond with bullet-pointed and concise information.
-        If the transcript lacks sufficient detail for a definitive answer, state "I don't know." Your response should be clear, factual, and directly derived from the provided transcript.
+        Respond with bullet-pointed and concise information that directly answers the question, following these principles:
+
+        - Focus solely on the aspects of the transcript that are directly relevant to the question asked.
+        - Exclude any information from the transcript that is not pertinent to answering the question.
+        - Present your findings in a clear and structured bullet-point format for easy understanding.
+        - If the transcript does not contain sufficient detail to provide a definitive answer, simply state "Insufficient information for a definitive answer."
+
+        Your response should be clear, factual, and strictly derived from the provided transcript.
         """,
     )
     chain = LLMChain(llm=llm, prompt=prompt)
